@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>Movie Seat Booking</title>
+  </head>
+  <body>
+    <div class="movie-container">
+      <div class="dropdown-header" style="font-family: Arial, sans-serif; margin-top: 20px; margin-bottom: 5px;">
+        <p style="font-weight: bold;">Press the button to select Movie:</p>
+        <hr>
+        <div style="margin-top: 10px;"> <!-- Added margin-top to separate button -->
+          <button class="dropdown-button" onclick="toggleOptions()">
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <select id="movie" class="movie-dropdown" style="font-weight: bold; color: darkgrey; display: none;">
+            <option value="220">Godzilla vs Kong (RS.220)</option>
+            <option value="320">Radhe (RS.320)</option>
+            <option value="250">RRR (RS.250)</option>
+            <option value="260">F9 (RS.260)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+
+    <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>Available</small>
+      </li>
+      <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+      </li>
+      <li>
+        <div class="seat sold"></div>
+        <small>Sold</small>
+      </li>
+    </ul>
+    <div class="container">
+      <div class="screen"></div>
+       
+      <!--row1-->
+      <div class="row">
+        <!-- Left section -->
+        <div class="left-section">
+          <div class="seat"> </div>
+        </div>
+        
+        <!-- Middle section with 4 seats -->
+        <div class="middle-section">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        
+        <!-- Right section with 1 seat -->
+        <div class="right-section">
+          <div class="seat"></div>
+        </div>
+      </div>
+ <!--row2-->
+      <div class="row">
+        <!-- Left section -->
+        <div class="left-section">
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        
+        <!-- Middle section with 4 seats -->
+        <div class="middle-section">
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+        
+        <!-- Right section with 1 seat -->
+        <div class="right-section">
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+      </div>
+
+       <!--row3-->
+      <div class="row">
+  <!-- Left section -->
+  <div class="left-section">
+    <div class="seat"></div>
+    <div class="seat"></div>
+    <div class="seat"></div>
+  </div>
+  
+  <!-- Middle section with 4 seats -->
+  <div class="middle-section">
+    <div class="seat"></div>
+    <div class="seat"></div>
+    <div class="seat"></div>
+    <div class="seat"></div>
+  </div>
+  
+  <!-- Right section with 1 seat -->
+  <div class="right-section">
+    <div class="seat"></div>
+    <div class="seat"></div>
+    <div class="seat"></div>
+  </div>
+</div>
+  <!--row4-->
+<div class="row">
+    <!-- Left section -->
+    <div class="left-section">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+    
+    <!-- Middle section with 4 seats -->
+    <div class="middle-section">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+    
+    <!-- Right section with 1 seat -->
+    <div class="right-section">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+  </div>
+
+
+<!--row5-->
+<div class="row">
+    <!-- Left section -->
+    <div class="left-section">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+    
+    <!-- Middle section with 4 seats -->
+    <div class="middle-section">
+      <div class="seat"></div>
+      <div class="seat sold"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
+    
+    <!-- Right section with 1 seat -->
+    <div class="right-section">
+        <div class="seat sold"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+  </div>
+
+  <!--row6-->
+<div class="row">
+    <!-- Left section -->
+    <div class="left-section">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+    
+    <!-- Middle section with 4 seats -->
+    <div class="middle-section">
+      <div class="seat"></div>
+      <div class="seat sold"></div>
+      <div class="seat sold"></div>
+      <div class="seat"></div>
+    </div>
+    
+    <!-- Right section with 1 seat -->
+    <div class="right-section">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+    </div>
+  </div>
+
+    <p class="text" style="font-weight: bolder; font-size: large;">
+      Total:   <span id="total" style="color: grey; font-weight: bolder; font-size: large"> 0</span
+      >
+      <button class="checkout">Check Out</button>
+    </p>
+
+    <div class="popup" id="popup" class="flex_center">
+      <img src="Images/checkmark--outline.svg" />
+      <h3 id="popupMessage"></h3>
+      <button onclick="hidePopup()">Ok</button>
+    </div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>

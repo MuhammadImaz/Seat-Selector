@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #343434;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Lato", sans-serif;
+  margin: 0 auto;
+  width: 480px;
+  border: 1px solid #343434;
+  font-weight: bold;
+  margin-top: 40px;
+}
+.movie-container {
+  border: 1px solid #343434;
+  border-radius: 5px;
+  padding: 8px;
+  display: inline-block;
+  position: relative;
+  width: 450px; /* Adjust width as needed */
+}
+
+/* Dropdown button styling */
+.dropdown-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #343434;
+  color: #1f75fe;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.movie-container select {
+  background-color: #343434;
+  border: 0;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 5px 15px 5px 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.left-section,
+.middle-section,
+.right-section {
+  display: flex;
+}
+
+/* Optional: Adjust margin between sections */
+.left-section {
+  margin-right: 18px;
+}
+
+.right-section {
+  margin-left: 18px;
+}
+
+.seat {
+  background-color: #00ffff;
+  height: 26px;
+  width: 32px;
+  margin: 3px;
+  font-size: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat.selected {
+  background-color: #1f75fe;
+}
+
+.seat.sold {
+  background-color: #232b2b;
+}
+
+.seat:not(.sold):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.showcase .seat:not(.sold):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.showcase {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+.showcase li small {
+  margin-left: 2px;
+}
+
+.row {
+  display: flex;
+}
+
+.screen {
+  background-color: #fff;
+  height: 120px;
+  width: 100%;
+  margin: 15px 0;
+  transform: rotateX(-48deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+.text {
+  border: 1px solid #00ffff;
+  width: 450px;
+  padding: 10px;
+  background-color: #00ffff;
+  display: flex;
+}
+p.text {
+  margin: 5px 0;
+  text-align: center;
+}
+
+p.text span {
+  color: rgb(158, 248, 158);
+}
+
+.checkout {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0px;
+  color: white;
+  font-weight: bolder;
+  font-size: large;
+  padding: 0 0 0 200px;
+}
+
+.checkout:hover {
+  font-weight: 900;
+  font-size: x-large;
+}
+
+.popup {
+  width: 400px;
+  background-color: grey;
+  border-radius: 3mm;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: fixed;
+  /* padding: 30px; */
+  visibility: hidden;
+}
+
+.popup img {
+  padding-top: 20px;
+}
+
+.popup button {
+  background-color: #fff;
+  border: 1px solid darkolivegreen;
+  color: darkolivegreen;
+  display: block;
+  border-radius: 6px;
+  text-align: center;
+  margin: 50px auto;
+  padding: 10px;
+  width: 100px;
+  font-size: 20px;
+}
+/* Existing CSS */
+
+/* Your initial CSS styles */
+
+/* Media query for landscape mode */
+@media screen and (orientation: landscape) and (max-width: 600) {
+  body {
+    width: 500vh; /* Use viewport height to fill the width */
+    height: 100vw; /* Use viewport width for height */
+    margin-top: 0; /* Remove margin-top or adjust as necessary */
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+  }
+}
+/* Media query for portrait mode */
+@media screen and (orientation: portrait) and (max-height: 490px) {
+  body {
+    width: 100vw; /* Use viewport width for width */
+    height: 500vh; /* Use viewport height to fill the height */
+    margin-top: 0; /* Remove margin-top or adjust as necessary */
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+  }
+}
